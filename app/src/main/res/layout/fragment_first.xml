@@ -7,22 +7,127 @@
     tools:context=".FirstFragment">
 
     <TextView
-        android:id="@+id/textview_first"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_first_fragment"
-        app:layout_constraintBottom_toTopOf="@id/button_first"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button_first"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/next"
+        android:text="@string/welcome_txt"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_first" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.053" />
+
+    <TextView
+        android:id="@+id/game_finish_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.374" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/instuction_txt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.017" />
+
+    <ImageView
+        android:id="@+id/rock_img"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/rock"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/paper_img"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/paper_img"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/paper"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/scissors_img"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/scissors"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/paper_img" />
+
+    <ImageView
+        android:id="@+id/played_icon_computer"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/paper"
+        app:layout_constraintBottom_toTopOf="@+id/rock_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.178"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game_finish_txt"
+        app:layout_constraintVertical_bias="0.202" />
+
+    <ImageView
+        android:id="@+id/played_icon_player"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/paper"
+        app:layout_constraintBottom_toTopOf="@+id/rock_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.821"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game_finish_txt"
+        app:layout_constraintVertical_bias="0.202" />
+
+    <TextView
+        android:id="@+id/tv_computer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/computer"
+        app:layout_constraintBottom_toTopOf="@+id/rock_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.234"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/played_icon_computer"
+        app:layout_constraintVertical_bias="0.176" />
+
+    <TextView
+        android:id="@+id/tv_player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/player"
+        app:layout_constraintBottom_toTopOf="@+id/scissors_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/played_icon_player"
+        app:layout_constraintVertical_bias="0.176" />
+
+    <TextView
+        android:id="@+id/tv_vs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/vs"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/scissors_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game_finish_txt"
+        app:layout_constraintVertical_bias="0.305" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
