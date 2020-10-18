@@ -1,22 +1,30 @@
 package com.example.madlevel4task2
 
-import android.app.ActionBar
-import android.graphics.drawable.Drawable
+import android.app.PendingIntent.getActivity
 import android.os.Bundle
-import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavController
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
-import kotlinx.android.synthetic.main.activity_main.*
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
+    private lateinit var gameRepository: GameRepository
+
+    private val games = arrayListOf<Game>()
+    private val gameAdapter = GameAdapter(games)
+    private val mainScope = CoroutineScope(Dispatchers.Main)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +32,8 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
         navController = findNavController(R.id.nav_host_fragment)
     }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -55,8 +65,7 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             R.id.delete_history -> {
-                // TODO DELETE ALL HISTORY ITEMS
-                true
+                false
             }
             R.id.go_back -> {
                 navController.navigate(
@@ -66,9 +75,5 @@ class MainActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    private fun fabToggler() {
-
     }
 }
