@@ -25,4 +25,17 @@ class GameRepository(context: Context) {
     suspend fun deleteGame(game: Game) {
         gameDao.deleteProduct(game)
     }
+
+    suspend fun getLostGames(): String {
+        return gameDao.getLostGames()
+    }
+
+    suspend fun getWonGames(): String {
+        return gameDao.getWonGames()
+    }
+
+    suspend fun getDrawGames(): String {
+        return gameDao.getDrawGames()
+    }
+
 }

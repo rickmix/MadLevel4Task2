@@ -41,6 +41,13 @@ class FirstFragment : Fragment() {
 
         gameRepository = GameRepository(requireContext())
 
+        mainScope.launch {
+            tvStats.text = getString(R.string.stats_first_page,
+                gameRepository.getWonGames(),
+                gameRepository.getDrawGames(),
+                gameRepository.getLostGames())
+        }
+
         played_icon_player.setImageResource(0)
         played_icon_computer.setImageResource(0)
         tv_computer.setVisibility(View.INVISIBLE)
@@ -64,6 +71,13 @@ class FirstFragment : Fragment() {
         tv_computer.setVisibility(View.VISIBLE)
         tv_player.setVisibility(View.VISIBLE)
         tv_vs.setVisibility(View.VISIBLE)
+
+        mainScope.launch {
+            tvStats.text = getString(R.string.stats_first_page,
+                gameRepository.getWonGames(),
+                gameRepository.getDrawGames(),
+                gameRepository.getLostGames())
+        }
 
         if(player == computer) {
             //DRAW
